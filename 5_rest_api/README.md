@@ -2,6 +2,8 @@
 
 This is a small web application that consumes a JSON payload `{ "to_encode": "ABCDDDDDDDD" }`, and returns a run length encoded version: `{ "encoded": "1A1B1C8D" }`
 
+Try it! `go run ./main.go`, and then `curl -i -H "Content-Type: application/json" -X POST -d '{"to_encode":"ABCDDDDDDDDDD"}' localhost:1323/rle`
+
 ## Attack Surface
 
 What's the attack surface here? In this case, it's the JSON body we parse. In another web application it might be worth trying a header, like the Authorization header, or potentially Query Parameters. We can see here, however, that the part this webapp actually reads from is the JSON body, so that's what we'll focus on.

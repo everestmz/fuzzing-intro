@@ -21,7 +21,9 @@ func EncodeHandler(c echo.Context) error {
 		return err
 	}
 
+	encoded := RunLengthEncode(request.ToEncode)
+
 	return c.JSON(http.StatusOK, &EncodeResponse{
-		Encoded: RunLengthEncode(request.ToEncode),
+		Encoded: encoded,
 	})
 }
