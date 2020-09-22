@@ -4,7 +4,7 @@ Useful for fuzzing programs that consume a very well-defined input language.
 
 ## Dharma
 
-To install: `pip install dharma` (Python required!)
+To install: `pip install dharma` (Python required!) (or `pip3 install dharma`)
 
 Think back to when we mutated that one JSON file with Radamsa - we got some interesting inputs, but they all looked very similar. When using a gramma fuzzer, you can get very varied inputs that still conform to a format, without needing to provide examples!
 
@@ -12,7 +12,7 @@ Think back to when we mutated that one JSON file with Radamsa - we got some inte
 
 Use case: fuzzing a JSON parser
 
-`dharma -grammars ./json/dg`
+`dharma -grammars ./json.dg`
 
 `dharma -grammars ./json.dg -count 100`
 
