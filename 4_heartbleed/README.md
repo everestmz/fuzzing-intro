@@ -2,10 +2,6 @@
 
 To do this, we'll use libFuzzer. Like go-fuzz, but for LLVM, so good for C, C++, Rust etc.
 
-## Download and unpack a vulnerable version of OpenSSL:
-curl -O https://ftp.openssl.org/source/old/1.0.1/openssl-1.0.1f.tar.gz
-tar xf openssl-1.0.1f.tar.gz
-
 ## Attack surface:
 
 Something that always happens is the OpenSSL Handshake, so let's write a fuzzer that sets up a server, and then acts as the client trying to make a handshake to that server.
@@ -13,6 +9,10 @@ Something that always happens is the OpenSSL Handshake, so let's write a fuzzer 
 ## Harness:
 
 You can see an example of a harness for the OpenSSL handshake in `handshake-fuzzer.cc`
+
+## Download and unpack a vulnerable version of OpenSSL:
+curl -O https://ftp.openssl.org/source/old/1.0.1/openssl-1.0.1f.tar.gz
+tar xf openssl-1.0.1f.tar.gz
 
 ## Build OpenSSL:
 
