@@ -2,9 +2,11 @@
 
 # Desired usage: ./fuzz.sh [program] [seed_dir]
 
+DIR=$(dirname $0)
+
 while true; do
     # Generate a test case with radamsa
-    radamsa $2/* > input.txt
+    ${DIR}/radamsa/bin/radamsa $2/* > input.txt
     # Display the test
     cat input.txt
     # Execute the program we're testing

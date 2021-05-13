@@ -4,7 +4,10 @@
 
 Uses _code coverage feedback_ to decide which input is interesting. If an input covers new code than previous ones, it's saved for further mutation.
 
-Install: `go get -u github.com/dvyukov/go-fuzz/go-fuzz github.com/dvyukov/go-fuzz/go-fuzz-build`
+Install: `cd .. && go get -u github.com/dvyukov/go-fuzz/go-fuzz github.com/dvyukov/go-fuzz/go-fuzz-build`
+_note: we need to do this outside of the Go module so we don't add it as a dependency_
+
+Add to your path: `export PATH=/home/runner/go/bin:$PATH`
 
 ## Limitations of mutational fuzzing alone:
 

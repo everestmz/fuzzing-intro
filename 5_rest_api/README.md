@@ -22,6 +22,7 @@ Let's build our fuzzer: `go-fuzz-build -o fuzz_1.zip ./handlers`
 
 And then run it: `go-fuzz -bin=fuzz_1.zip -workdir=workdir`
 
+## Defining properties
 So, we've got a fuzzer that sends garbled data into `RunLengthEncode`. Why aren't we finding any bugs? Well, similar to our heartbleed example, there's a chance that if there are any bugs in our code, they're a little more subtle than a bug that just crashes it outright.
 
 For heartbleed, we used Address Sanitizer. The _invariant_ we were working with is "This code has no memory corruption bugs". Since this web service is run-length-encoding strings, why not assert that it actually encodes them properly, by trying to decode them after?
